@@ -1,9 +1,10 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
-	fmt.Println("hello world")
+	//fnConst()
+	//fnFunc()
+	//fnDefer()
+	//fnList()
+	fnOOP()
+	//fmt.Println("hello world")
 }
