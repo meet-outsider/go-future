@@ -2,38 +2,19 @@ package main
 
 import (
 	"fmt"
-	reflect2 "reflect"
 )
 
+func same[T int | string, E bool](a T, b T) E {
+	return a == b
+}
+func closure(string2 string) func() int {
+	num := 0
+	return func() int {
+		fmt.Print("入参为:\t" + string2)
+		num++
+		return num
+	}
+}
 func main() {
-	//check(1)
-	//check("1")
-	//check(true)
-	//check([]int{1, 1, 3, 4})
-	fnSlice()
-
-}
-func fnSlice() {
-	var slice []string
-	slice = make([]string, 0)
-	slice = append(slice, "1", "2", "3", "4")
-	for i := range slice {
-		fmt.Println(slice[i])
-	}
-}
-func check(unknown interface{}) {
-	ref := reflect2.ValueOf(unknown)
-	switch ref.Kind() {
-	case reflect2.String:
-		var v string = ref.String()
-		println(v)
-		println("type:string value:", ref.String())
-	case reflect2.Int:
-		println("type:int value:", ref.Int())
-	case reflect2.Bool:
-		println("type:bool value:", ref.Bool())
-	case reflect2.Slice:
-		println("is slice")
-		fmt.Println(ref.Slice(0, ref.Len()))
-	}
+	fmt.Println(same("1", "1"))
 }

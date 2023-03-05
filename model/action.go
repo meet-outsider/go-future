@@ -8,3 +8,8 @@ type Action interface {
 type Walk interface {
 	Walk() string
 }
+
+func GetName(name string, age int) bool {
+
+	return true
+}
